@@ -30,3 +30,60 @@ Required environments:
 * [cocoapi-aitod](https://github.com/jwwangchn/cocoapi-aitod)
 * [DN-TOD](https://github.com/ZhuHaoranEIS/DN-TOD)
 * [SODA](https://github.com/shaunyuan22/SODA-mmrotate)
+
+
+Install:
+
+Note that this repository is based on the [MMDetection](https://github.com/open-mmlab/mmdetection) and [MMRotate](https://github.com/open-mmlab/mmdetection). Assume that your environment has satisfied the above requirements, please follow the following steps for installation.
+
+```shell script
+git clone https://github.com/ZhuHaoranEIS/Point-Teacher.git
+cd Point-Teacher/HBB_TOD or Point-Teacher/OBB_TOD
+pip install -r requirements/build.txt
+python setup.py develop
+```
+
+## Prepare datasets
+
+- Please refer to [AI-TOD](https://github.com/Chasel-Tsui/mmdet-aitod) for AI-TOD-v2.0 and AI-TOD-v1.0 dataset.
+- Please refer to [SODA](https://github.com/shaunyuan22/SODA-mmrotate) for SODA-A and SODA-D dataset.
+
+## Training
+
+All models of Point Teacher are trained with a total batch size of 2 (can be adjusted following [MMDetection](https://github.com/open-mmlab/mmdetection)). 
+
+- To train Point Teacher on AI-TOD-v2.0, run
+
+```shell script
+# For center point
+python tools/train.py [configs/point_teacher/aitodv2_point_teacher_0%.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/HBB_TOD/configs/point_teacher/aitodv2_point_teacher_0%25.py) --gpu-id 0
+
+# For random point
+python tools/train.py [configs/point_teacher/aitodv2_point_teacher_100%.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/HBB_TOD/configs/point_teacher/aitodv2_point_teacher_100%25.py) --gpu-id 0
+
+```
+
+- To train Point Teacher on SODA-A, run
+
+```shell script
+# For center point
+python tools/train.py [configs/point_teacher/sodaa_fcos_point_teacher_1x.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/OBB_TOD/configs/point%20teacher/sodaa_fcos_pointteacher_1x.py) --gpu-id 0
+
+```
+
+## Inference
+
+- Modify [test.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/HBB_TOD/tools/test.py)
+
+```/path/to/model_config```: modify it to the path of model config, e.g., ```configs/Point_Teacher/aitodv2_point_teacher_1x.py```
+
+```/path/to/model_checkpoint```: modify it to the path of model checkpoint
+
+
+- Run
+```
+python tools/test.py configs/Point_Teacher/aitodv2_point_teacher_1x.py /path/to/model_checkpoint --eval bbox
+```
+
+## Main results
+![results](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/main%20results.png)
