@@ -91,7 +91,7 @@ python tools/test.py configs/Point_Teacher/aitodv2_point_teacher_1x.py /path/to/
 
 ## Visualization
 The images are from the AI-TOD-v2.0 datasets. Note that the <font color=green>green box</font> denotes the True Positive, the <font color=red>red box</font> denotes the False Negative and the <font color=blue>blue box</font> denotes the False Positive predictions.
-![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/detection_results.pdf)
+![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/detection_results.png)
 
 ## Citation
 If you find this work helpful, please consider citing:
