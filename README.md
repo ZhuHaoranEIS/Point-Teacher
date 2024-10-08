@@ -56,10 +56,10 @@ All models of Point Teacher are trained with a total batch size of 2 (can be adj
 
 ```shell script
 # For center point
-python tools/train.py [configs/point_teacher/aitodv2_point_teacher_0%.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/HBB_TOD/configs/point_teacher/aitodv2_point_teacher_0%25.py) --gpu-id 0
+python tools/train.py configs/point_teacher/aitodv2_point_teacher_0%.py --gpu-id 0
 
 # For random point
-python tools/train.py [configs/point_teacher/aitodv2_point_teacher_100%.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/HBB_TOD/configs/point_teacher/aitodv2_point_teacher_100%25.py) --gpu-id 0
+python tools/train.py configs/point_teacher/aitodv2_point_teacher_100%.py --gpu-id 0
 
 ```
 
@@ -67,7 +67,7 @@ python tools/train.py [configs/point_teacher/aitodv2_point_teacher_100%.py](http
 
 ```shell script
 # For center point
-python tools/train.py [configs/point_teacher/sodaa_fcos_point_teacher_1x.py](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/OBB_TOD/configs/point%20teacher/sodaa_fcos_pointteacher_1x.py) --gpu-id 0
+python tools/train.py configs/point_teacher/sodaa_fcos_point_teacher_1x.py --gpu-id 0
 
 ```
 
@@ -87,3 +87,14 @@ python tools/test.py configs/Point_Teacher/aitodv2_point_teacher_1x.py /path/to/
 
 ## Main results
 ![results](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/main%20results.png)
+
+
+## Visualization
+The images are from the AI-TOD-v2.0 datasets. Note that the <font color=green>green box</font> denotes the True Positive, the <font color=red>red box</font> denotes the False Negative and the <font color=blue>blue box</font> denotes the False Positive predictions.
+![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/detection_results.png)
+
+## Citation
+If you find this work helpful, please consider citing:
+```bibtex
+
+```
