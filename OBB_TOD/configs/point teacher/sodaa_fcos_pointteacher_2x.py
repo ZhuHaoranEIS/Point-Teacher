@@ -11,7 +11,7 @@ angle_version = 'le90'
 ### MIL
 num_stages = 1
 mil_stack_conv = 0
-top_k = 5
+top_k = 3
 mil_neg_samples = 200
 num_training_burninstep1 = 100
 num_training_burninstep2 = 100
@@ -83,8 +83,6 @@ detector = dict(
             gamma=2.0,
             alpha=0.25,
             loss_weight=1.0),
-        # loss_bbox_burn1=dict(type='DIoULoss', loss_weight=1.0),
-        # loss_bbox_burn2=dict(type='DN_DIoULoss', loss_weight=1.0, hyper=0.1),
         loss_bbox_burn1=dict(type='RotatedIoULoss', loss_weight=1.0),
         loss_bbox_burn2=dict(type='DN_IoULoss', loss_weight=1.0, hyper=0.1),
         loss_bbox_denosing=dict(type='DN_DIoULoss', loss_weight=1.0, hyper=0.2),
