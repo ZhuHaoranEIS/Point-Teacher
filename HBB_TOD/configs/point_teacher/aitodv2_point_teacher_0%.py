@@ -11,7 +11,7 @@ ema_alpha = 0.999
 ### MIL
 num_stages = 1
 mil_stack_conv = 0
-top_k = 5
+top_k = 1
 mil_neg_samples = 200
 num_training_burninstep1 = 100
 num_training_burninstep2 = 100
