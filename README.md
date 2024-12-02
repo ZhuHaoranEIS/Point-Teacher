@@ -3,9 +3,10 @@ This is the official implementation of the paper "Tiny Object Detection with Sin
 
 ## :white_check_mark: Updates
 * **`Oct. 8th, 2024`**: Update: **Important!** we release the **Point Teacher HBB version** and **Point Teacher OBB version** model!
+* **`Dec. 2th, 2024`**: The paper will be released at **arxiv** soon! **If you have any questions, feel free to ask !!!**
 
 ## Introduction
-Point Teacher is a Robust End-to-End Point-Supervised TOD algorithm that can be integrated into either one-stage or two-stage algorithms.
+Point Teacher is a Robust End-to-end Point-supervised Tiny Object Detection algorithm that can be integrated into various detectors.
 
 **Abstract**: Tiny objects, with their limited spatial resolution, often resemble point-like distributions. As a result, bounding box prediction using point-level supervision emerges as a natural and cost-effective alternative to traditional box-level supervision. However, the small scale and lack of distinctive features of tiny objects make point annotations prone to noise, posing significant hurdles for model robustness. To tackle these challenges, we propose Point Teacher—the first end-to-end point-supervised method for robust tiny object detection in aerial images. To handle label noise from scale ambiguity and location shifts in point annotations, Point Teacher employs the teacher-student architecture and decouples the learning into a two-phase denoising process. In this framework, the teacher network progressively denoises the pseudo boxes derived from noisy point annotations, guiding the student network's learning. Specifically, in the first phase, random masking of image regions facilitates regression learning, enabling the teacher to transform noisy point annotations into coarse pseudo boxes. In the second phase, these coarse pseudo boxes are refined using dynamic multiple instance learning, which adaptively selects the most reliable instance from dynamically constructed proposal bags around the coarse pseudo boxes. Extensive experiments on three tiny object datasets (i.e., AI-TOD-v2, SODA-A, and TinyPerson) validate the proposed method's effectiveness and robustness against point location shifts. Notably, relying solely on point supervision, our Point Teacher already shows comparable performance with box-supervised learning methods.
 
