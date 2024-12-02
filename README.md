@@ -1,5 +1,5 @@
 # Point-Teacher
-This is the official implementation of the paper "Point Teacher: Robust End-to-End Tiny Object Detection with Single Point Supervision". [arxiv](xxx)
+This is the official implementation of the paper "Tiny Object Detection with Single Point Supervision". [arxiv](xxx)
 
 ## :white_check_mark: Updates
 * **`Oct. 8th, 2024`**: Update: **Important!** we release the **Point Teacher HBB version** and **Point Teacher OBB version** model!
@@ -7,14 +7,18 @@ This is the official implementation of the paper "Point Teacher: Robust End-to-E
 ## Introduction
 Point Teacher is a Robust End-to-End Point-Supervised TOD algorithm that can be integrated into either one-stage or two-stage algorithms.
 
-**Abstract**: Point-supervised object detection (PSOD) has recently gained significant attention due to its cost-effectiveness. However, existing methods often assume that point annotations are located in the center or central region of the object, an assumption that is inadequate for tiny objects that occupy very few pixels. To address this limitation, we propose Point Teacher, a robust end-to-end point-based tiny object detector. In this work, we revisit the point annotation challenge as a label noise problem and introduce a two-stage training paradigm. The first stage is Preliminary Learning phase, where the network learns to regress regions by randomly removing parts of the image, helping it to develop preliminary spatial perception capabilities. The second stage is Denoising Learning phase, where we implement a self-optimizing teacher-student network along with a dynamic multiple instance learning (DMIL) approach. The teacher network generates coarse pseudo-boxes based on preliminary learning, which DMIL then refines for effective student network training. Moreover, we introduce a noise-resistant IoU loss, termed Shaking IoU Loss. Shaking IoU Loss mitigates the network's tendency to overfit noisy boxes by introducing perturbations to the regression targets. Extensive experiments on synthetic point-based datasets (i.e., AI-TOD-v2, SODA-A, and TinyPerson) demonstrate the robustness and effectiveness of our Point Teacher.
+**Abstract**: Tiny objects, with their limited spatial resolution, often resemble point-like distributions. As a result, bounding box prediction using point-level supervision emerges as a natural and cost-effective alternative to traditional box-level supervision. However, the small scale and lack of distinctive features of tiny objects make point annotations prone to noise, posing significant hurdles for model robustness. To tackle these challenges, we propose Point Teacher—the first end-to-end point-supervised method for robust tiny object detection in aerial images. To handle label noise from scale ambiguity and location shifts in point annotations, Point Teacher employs the teacher-student architecture and decouples the learning into a two-phase denoising process. In this framework, the teacher network progressively denoises the pseudo boxes derived from noisy point annotations, guiding the student network's learning. Specifically, in the first phase, random masking of image regions facilitates regression learning, enabling the teacher to transform noisy point annotations into coarse pseudo boxes. In the second phase, these coarse pseudo boxes are refined using dynamic multiple instance learning, which adaptively selects the most reliable instance from dynamically constructed proposal bags around the coarse pseudo boxes. Extensive experiments on three tiny object datasets (i.e., AI-TOD-v2, SODA-A, and TinyPerson) validate the proposed method's effectiveness and robustness against point location shifts. Notably, relying solely on point supervision, our Point Teacher already shows comparable performance with box-supervised learning methods.
 
 <div align=center>
-<img src="https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/background.png" width="500px">
+<img src="https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/background.jpg" width="500px">
+</div>
+
+<div align=center>
+<img src="https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/compare.jpg" width="500px">
 </div>
 
 ## Method
-![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/overall_wo_background.png)
+![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/point_teacher_framework.jpg)
 
 ## Installation and Get Started
 [![Python](https://img.shields.io/badge/python-3.7%20tested-brightgreen)](https://www.python.org/)
@@ -86,12 +90,14 @@ python tools/test.py configs/Point_Teacher/aitodv2_point_teacher_1x.py /path/to/
 ```
 
 ## Main results
-![results](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/main%20results.png)
+![results](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/table1.jpg)
+
+![results](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/table2.jpg)
 
 
 ## Visualization
 The images are from the AI-TOD-v2.0 datasets. Note that the <font color=green>green box</font> denotes the True Positive, the <font color=red>red box</font> denotes the False Negative and the <font color=blue>blue box</font> denotes the False Positive predictions.
-![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/detection_results.png)
+![demo image](https://github.com/ZhuHaoranEIS/Point-Teacher/blob/main/Supplement_details/detection_results.jpg)
 
 ## Citation
 If you find this work helpful, please consider citing:
