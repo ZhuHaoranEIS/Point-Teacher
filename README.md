@@ -3,7 +3,7 @@ This is the official implementation of the paper "Tiny Object Detection with Sin
 
 ## :white_check_mark: Updates
 * **`Oct. 8th, 2024`**: Update: **Important!** we release the **Point Teacher HBB version** and **Point Teacher OBB version** model!
-* **`Dec. 2th, 2024`**: The paper will be released at **arxiv** soon! **If you have any questions, feel free to ask !!!**
+* **`Dec. 2th, 2024`**: **If you have any questions, feel free to ask !!!**
 
 ## Introduction
 Point Teacher is a Robust End-to-end Point-supervised Tiny Object Detection algorithm that can be integrated into various detectors.
