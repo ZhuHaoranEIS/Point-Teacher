@@ -1,5 +1,5 @@
 # Point-Teacher
-This is the official implementation of the paper "Tiny Object Detection with Single Point Supervision". [arxiv](xxx)
+This is the official implementation of the paper "Tiny Object Detection with Single Point Supervision". [arxiv](https://arxiv.org/abs/2412.05837)
 
 ## :white_check_mark: Updates
 * **`Oct. 8th, 2024`**: Update: **Important!** we release the **Point Teacher HBB version** and **Point Teacher OBB version** model!
@@ -103,5 +103,13 @@ The images are from the AI-TOD-v2.0 datasets. Note that the <font color=green>gr
 ## Citation
 If you find this work helpful, please consider citing:
 ```bibtex
-
+@misc{point_teacher,
+      title={Tiny Object Detection with Single Point Supervision}, 
+      author={Haoran Zhu and Chang Xu and Ruixiang Zhang and Fang Xu and Wen Yang and Haijian Zhang and Gui-Song Xia},
+      year={2024},
+      eprint={2412.05837},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.05837}, 
+}
 ```
